@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexadecimal.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:29:19 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/11/04 20:00:27 by mcorcher         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:21:26 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ if (n == 0)
 	return (write(1, "0x0", 3), 0);
 while (n > 0)
 {	
-	rest = n % 16;
+	rest = (n % 16);
 	if (n <= 9)
 		hex[i] = '0' + rest;
 	else
@@ -71,6 +71,7 @@ while (i > 0)
 }
 return (j);
 }
+
 /*
 int main() 
 {	

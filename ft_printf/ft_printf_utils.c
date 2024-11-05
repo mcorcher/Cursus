@@ -1,17 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printfutils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 23:37:12 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/11/04 20:22:20 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/11/04 20:03:12 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/11/05 16:16:30 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (*str != '\0')
+	{
+		++i;
+		str = str + 1;
+	}
+	return (i);
+}
+
+int	ft_putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+int	ft_putstr(char *str)
+{
+	if (!str)
+	{
+		return (write(1, "(null)", 6));
+	}
+	return (write(1, &str, ft_strlen(str)));
+}
 int	ft_putnbr(int n)
 {
 	int	res;
