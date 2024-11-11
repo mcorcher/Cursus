@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 20:47:52 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/11/04 19:36:31 by mcorcher         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:30:12 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_puthexadecimal_lowercase(unsigned int n);
 
 int		ft_puthexadecimal_uppercase(unsigned int n);
 
-int		ft_putpadress(size_t n);
+int     ft_pointhex(void *ptr)
 
 size_t	ft_strlen(const char *str);
 

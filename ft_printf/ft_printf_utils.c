@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mcorcher <mcorcher@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 20:47:52 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/11/05 18:46:42 by alberto          ###   ########.fr       */
+/*   Updated: 2024/11/07 23:36:27 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-int	ft_putstr(char *str)
+int	ft_putstr(char *str, int j)
 {
-	if (!str)
+	if (str == NULL)
 	{
-		return (write(1, "(null)", 6));
+		j += write(1, "(null)", 6);
+		return (j);
 	}
-	return (write(1, &str, ft_strlen(str)));
+	j += write(1, str, ft_strlen(str));
+	return (j);
 }
 int	ft_putnbr(int n)
 {
@@ -60,16 +62,15 @@ int	ft_putnbr(int n)
 	write(1, &res, 1);
 	return (res);
 }
-int		ft_putunbr(unsigned int n)
+int	ft_putunbr(unsigned int n)
 {
-	unsigned int	res;
-	int	result;
-	
-	res = n % 10;
-	result = 0;
-	if (n > 9)
-		result = ft_putunbr(n / 10);
-	res += 48;
-	result += write(1, &res, 1);
-	return (result);
+	int		len;
+	char	num;
+
+	len = 0;
+	if (n >= 10)
+		len += ft_putunbr(n / 10);
+	num = n % 10 + '0';
+	len += ft_putchar(num);
+	return (len);
 }

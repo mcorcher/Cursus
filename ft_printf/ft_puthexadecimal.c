@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexadecimal.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mcorcher <mcorcher@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 20:47:52 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/11/05 18:46:53 by alberto          ###   ########.fr       */
+/*   Created: 2024/11/07 23:33:12 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/11/07 23:35:07 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 int	ft_puthexadecimal_lowercase(unsigned int n)
 {
+int		j;
 int		i;
 char	hex[9];
 int		rest;
-int		j;
  
 i = 0;
 if (n == 0)
-	return (write(1, "0x0", 3), 0);
+	return (write(1, "0", 1), 0);
 while (n > 0)
 {	
 	rest = n % 16;
@@ -49,10 +49,10 @@ int		i;
 char	hex[9];
 int		rest;
 int		j;
- 
+ F
 i = 0;
 if (n == 0)
-	return (write(1, "0x0", 3), 0);
+	return (write(1, "0", 1), 0);
 while (n > 0)
 {	
 	rest = (n % 16);
@@ -72,7 +72,6 @@ while (i > 0)
 return (j);
 }
 
-/*
 int main() 
 {	
     unsigned int numero = 255;
@@ -83,4 +82,4 @@ int main()
 	printf("%d\n",ret);
     return (0);
 }
-*/
+
